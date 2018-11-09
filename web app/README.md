@@ -8,7 +8,8 @@ http://118lalala.us-east-1.elasticbeanstalk.com/
 
 ## Web Preview(on AWS)
 ### Upload Page
-![alt text](https://user-images.githubusercontent.com/43448232/48171157-95d68280-e2c8-11e8-8cea-059ca2514fea.jpg )
+![alt text](https://user-images.githubusercontent.com/43448232/48240014-2a131900-e39f-11e8-9f1a-213d81d44080.png)
 
 ### Display Page
-![alt text](https://user-images.githubusercontent.com/43448232/48171420-d2ef4480-e2c9-11e8-9921-b2db1ef3faf1.jpg)
+![alt text](https://user-images.githubusercontent.com/43448232/48240020-2c757300-e39f-11e8-8042-1b10159f05e4.png)
+
