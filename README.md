@@ -7,7 +7,7 @@ For now, we have developed an simple cnn model to detect whether there is a ship
 We have deployed the U-net model, and can achieve predicting the location of the ships and draw a border-box around them.
 
 
-## web application
+## Web Application
 ### 1.web interface design
 we have finished the framework of the web using html and css styling. 
 ### 2. backend
