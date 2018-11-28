@@ -10,8 +10,8 @@ We have deployed the U-net model, and can achieve predicting the location of the
 ## web progress
 ### 1.web interface design
 we have finished the framework of the web using html and css styling. 
-
 ### 2. backend
 We used Flask to deploy our Python language machine learning model to our web application.
 ### 3. AWS elastic beanstalk
-We use AWS elastic beanstalk service to run our web app, choosing python as the ec2 instance environment language, and also have applied for a domain name for our website.
+We use AWS elastic beanstalk service to run our web app, choosing python as the ec2 instance environment language, and also have applied for a domain name for our website. Our website address is: http://www.shipdetection.com/
+
