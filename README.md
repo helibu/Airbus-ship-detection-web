@@ -16,6 +16,10 @@ We used Flask to deploy our Python language machine learning model to our web ap
 We use AWS elastic beanstalk service to run our web app, choosing python as the ec2 instance environment language, and also have applied for a domain name for our website. Our website address is: http://www.shipdetection.com/
 
 Here is our website interface. We can upload a bunch of images in the same time, and see the image by click the "Images" button.
+
 ![alt text](https://user-images.githubusercontent.com/43448232/49178208-267b0e00-f31d-11e8-8ca1-e58a8a929d33.png)
+
+
 In our image page, we can view our uploaded images with "has ship" or "no ship" on them, and if there is a ship on the image, the ship will be bordered by a red border-box. Also there is a "Clear images" button to clear the result.
+
 ![alt text](https://user-images.githubusercontent.com/43448232/49178241-3c88ce80-f31d-11e8-8751-c0d8d182132f.png)
