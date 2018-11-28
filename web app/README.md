@@ -8,6 +8,7 @@ We have completed a web app framework, it can upload the images and predict the 
 ## Website 
 Our website on AWS beanstalk.
 http://shipdetection.us-east-1.elasticbeanstalk.com
+And we have applied for a domain name, http://www.shipdetection.com/
 
 ## Web Preview(on AWS)
 ### Upload Page
