@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="shortcut icon" href="http://www.iconarchive.com/download/i91833/icons8/windows-8/Transport-Historic-Ship.ico">
+    <meta charset="utf-8" />
+    <title>Ship Detection</title>
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        * {
+	        box-sizing: border-box;
+	        margin: 0 0 0 0;
+	        padding: 0;
+        }
+
+        body {
+	        background-color:white;
+	        font-style: normal;
+	        font-weight: 300;
+	        font-size: 20px;
+            padding-bottom:0px;
+        }
+        /*top-header style*/
+        .top-header {
+	        align-items: center;
+	        background-color:#3949a3;
+	        box-shadow: 0px 2px 10px #333333;
+	        display: flex;
+	        height: 50px;
+	        position: fixed;
+	        top: 0;
+	        width: 100%;
+	        z-index: 1;
+            color:white;
+            font-weight: bold;
+            padding-top: 0px;
+        }
+        .top-nav {
+	        flex: 1;
+        }
+        .top-nav a {
+            color: white;
+            font:25px;
+	        font-weight: 400;
+            text-decoration:none;
+	        margin-left: 20px;
+        }
+        .top-nav a:hover {
+            text-decoration:underline;
+        }
+
+
+        /*main container style*/
+        #info {
+            margin: 60px auto;
+	        max-width: 1000px;
+	        min-width: 800px;
+
+
+        }
+
+
+
+        .bio {
+            overflow: hidden;
+            padding:50px;
+            padding-top:120px;
+            padding-bottom:200px;
+
+            margin:20px;
+            text-align: center;
+        }
+
+
+        .link:hover {
+            background:lightgrey;
+            color:navy;
+        }
+        .link:active {
+            background:lightgrey;
+            color:red;
+        }
+        #links {
+            text-align: center;
+        }
+        html, input, textarea {
+            font: 100%/1.5em Helvetica, Arial, sans-serif;
+        }
+
+        #inputdiv {
+            overflow: hidden;
+            margin: 5% auto 0;
+            text-align: center;
+            width: 50%;
+            padding: 20px;
+
+        }
+
+        div input {
+            background: rgb(236, 240, 241);
+            border-radius: 3px;
+            padding: 1em;
+            width: 659px;
+        }
+        .logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100px;
+        }
+
+
+        input#fakeInput {
+          cursor: pointer;
+          width: 600px;
+          background-color: #f8f8f8;
+          border-radius: 8px;
+          display:block;
+          padding: 11px 0;
+          box-sizing: border-box;
+          border:initial;
+          box-shadow: 0px 2px 10px #333333;
+          height:50px;
+        }
+        #fakeInput:hover{
+            box-shadow: 0px 2px 10px #333333;
+        }
+        #buttonImage {
+          cursor: pointer;
+          height:50px;
+          width:100px;
+          float: right;
+          position: absolute;
+          right: 0;
+          top: 0;
+          background: #3949a3;
+          padding:10px;
+          color: white;
+          font-weight: bold;
+          border-radius: 0px 8px 8px 0px;
+          height:2.4em;
+        }
+        #buttonImage:hover{
+            box-shadow: 0px 2px 10px #333333;
+        }
+        #fakeDiv {
+          width: 700px;
+          position: relative;
+          display: inline-block;
+
+        }
+        #file-picker {
+          cursor: pointer;
+          opacity:0;
+          position:absolute;
+          left: 0px;
+          top: 4px;
+          height:50px;
+          width:700px;
+          box-shadow: 0px 2px 10px #333333;
+          z-index:-1;
+
+        }
+        #file-picker:hover{
+            box-shadow: 0px 2px 10px #333333;
+        }
+
+        #upload-button{
+	        cursor: pointer;
+            border-radius: 10px;
+            font-size:15px;
+
+            font-weight: bold;
+            -webkit-font-smoothing: antialiased;
+            box-shadow:none;
+            border:none;
+
+
+        }
+        #upload-button:hover{
+            box-shadow: 0px 2px 10px #333333;
+        }
+        #see-images {
+	        cursor: pointer;
+            border-radius: 10px;
+            font-size:15px;
+            border:none;
+            font-weight: bold;
+            -webkit-font-smoothing: antialiased;
+            box-shadow:none;
+            border:none;
+        }
+        #see-images:hover{
+            box-shadow: 0px 2px 10px #333333;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="top-header">
+        <nav class="top-nav">
+            <a href="upload" style="text-decoration:underline;">Home</a>
+
+            <a href="gallery">Images</a>
+            <a href="samples">Samples</a>
+            <a href="about">About</a>
+        </nav>
+    </header>
+    <div class="container">
+
+        <div id="info">
+            <div class="bio inputdiv">
+
+                <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                    <img id="logo" src="http://www.iconarchive.com/download/i91833/icons8/windows-8/Transport-Historic-Ship.ico" alt="your image" class="logo" style="width:150px;" />
+                    <br/><br/>
+                    <div id="fakeDiv">
+                      <input id="file-picker" type="file" name="file" accept="image/*" multiple >
+
+                      <input type="text" id="fakeInput" onclick="document.getElementById('file-picker').click();"/>
+                      <span onclick="document.getElementById('file-picker').click();" id="buttonImage" >Browse</span>
+                    </div>
+
+                    <div id="msg"></div><br/>
+                    <input type="submit" value="Upload!" id="upload-button" style="width:100px;">&nbsp;&nbsp;
+                    <input type="submit" value="Images" id="see-images" style="width:100px;">
+                </form>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+<script>
+
+    $("#file-picker").change(function(){
+
+        var input = document.getElementById('file-picker');
+
+        for (var i=0; i<input.files.length; i++)
+        {
+        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
+            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+
+            if ((ext == 'jpg') || (ext == 'png'))
+            {
+
+            }
+            else
+            {
+                $("#msg").text("Files are NOT supported")
+                document.getElementById("file-picker").value ="";
+            }
+
+        }
+
+        $('#fakeInput').val(" "+(i)+" files selected.");
+
+    } );
+
+</script>
+</body>
+</html>
