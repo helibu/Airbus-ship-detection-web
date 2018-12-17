@@ -1,8 +1,8 @@
 # Airbus-ship-detection
 
 ## model progress
-### 1. CNN model for binary prediction
-For now, we have developed an simple cnn model to detect whether there is a ship in the image or not. The accuracy is about 0.9. Considering the fact that users could upload lots of images in the same time and no ships on about 70% of the images, a simply model can speed up the whole process.
+### 1. Ship existence model
+For now, we have developed an ensemble model to detect whether there is a ship in the image or not. The accuracy is about 95%. Considering the fact that users could upload lots of images in the same time and no ships on about 70% of the images, a simply model can speed up the whole process.
 ### 2. U-net model
 We have deployed the U-net model, and can achieve predicting the location of the ships and draw a border-box around them.
 
