@@ -52,5 +52,5 @@ In our image page, we can view our uploaded images with "has ship" or "no ship" 
 
 ### Sample page for sample images and sample download
 <p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/sample.gif"></p>
-### About page
+### About page 
 <p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/about.gif"></p>
