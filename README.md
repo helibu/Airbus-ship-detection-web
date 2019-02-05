@@ -1,14 +1,8 @@
 # Airbus-ship-detection
-<<<<<<< HEAD
-Website: http://www.shipdetection.com/
-Sample images: https://drive.google.com/open?id=1rjQF9jnoygp29ucw-GE5W1EPSuTt8L-g
-=======
 Website: http://www.shipdetection.com/</br>
 Sample Images: https://drive.google.com/open?id=1rjQF9jnoygp29ucw-GE5W1EPSuTt8L-g
->>>>>>> c6ca37a37f19697d751403b8521d110a431ac488
 
 ## Background and Data Analysis
-
 This is a Kaggle challenge, here is the link. https://www.kaggle.com/c/airbusship-detection. The data size is about 30GB. The training data are masked
 with a separate csv file. We need to submit the same mask csv file for the test
 data. 
