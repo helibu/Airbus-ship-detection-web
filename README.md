@@ -1,6 +1,11 @@
 # Airbus-ship-detection
+<<<<<<< HEAD
 Website: http://www.shipdetection.com/
 Sample images: https://drive.google.com/open?id=1rjQF9jnoygp29ucw-GE5W1EPSuTt8L-g
+=======
+Website: http://www.shipdetection.com/</br>
+Sample Images: https://drive.google.com/open?id=1rjQF9jnoygp29ucw-GE5W1EPSuTt8L-g
+>>>>>>> c6ca37a37f19697d751403b8521d110a431ac488
 
 ## Background and Data Analysis
 
@@ -17,7 +22,7 @@ https://keras.io/applications/. We use VGG16 and ResNet50 pretrained with
 ImageNet, add dense layer and flatten layer after the pretrained model. And
 combin in Model folder.Loss function is
 binary_crossentropy for we only need to detect if there is a ship or not. We
-tried simple CNN at first, but it doesn’t work well. Then we used pretrained
+tried simple CNN at first, but it doesnâ€™t work well. Then we used pretrained
 models trained with imagenet. These models have been well trained for
 classification purpose, which saved us a lot of time.
 
