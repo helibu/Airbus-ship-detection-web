@@ -44,12 +44,13 @@ We use AWS elastic beanstalk service to run our web app, choosing python as the 
 ## Features
 ### Home Page for image upload
 This is the homepage of our website. We can upload a bunch of images in the same time, and see the image by click the "Images" button.
+<p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/upload.gif"></p>
 
 ### Images Page to display uploaded and predicated images
 In our image page, we can view our uploaded images with "has ship" or "no ship" on them, and if there is a ship on the image, the ship will be bordered by a red border-box. Also there is a "Clear images" button to clear the result.
-
+<p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/gallery.gif"></p>
 
 ### Sample page for sample images and sample download
-
+<p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/sample.gif"></p>
 ### About page
-
+<p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/about.gif"></p>
