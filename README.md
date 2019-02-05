@@ -1,4 +1,5 @@
 # Airbus-ship-detection
+http://www.shipdetection.com/
 
 ## Background and Data Analysis
 
@@ -40,13 +41,15 @@ We used Flask to deploy our Python language machine learning model to our web ap
 ### 3. AWS elastic beanstalk
 We use AWS elastic beanstalk service to run our web app, choosing python as the ec2 instance environment language, and also have applied for a domain name for our website. Our website address is: http://www.shipdetection.com/
 
-Here is our website interface. We can upload a bunch of images in the same time, and see the image by click the "Images" button.
+## Features
+### Home Page for image upload
+This is the homepage of our website. We can upload a bunch of images in the same time, and see the image by click the "Images" button.
 
-![alt text](https://user-images.githubusercontent.com/43448232/49178208-267b0e00-f31d-11e8-8ca1-e58a8a929d33.png)
-
-
+### Images Page to display uploaded and predicated images
 In our image page, we can view our uploaded images with "has ship" or "no ship" on them, and if there is a ship on the image, the ship will be bordered by a red border-box. Also there is a "Clear images" button to clear the result.
 
-![alt text](https://user-images.githubusercontent.com/43448232/49178241-3c88ce80-f31d-11e8-8751-c0d8d182132f.png)
 
+### Sample page for sample images and sample download
+
+### About page
 
