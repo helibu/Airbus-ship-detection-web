@@ -105,7 +105,7 @@
             <div class="gallery">
                 {% for image_name in image_names %}
 
-                <a  href=" {{url_for('send_image', filename=image_name)}}" ><img  src=" {{url_for('send_image', filename=image_name)}}"></a>
+                <a  href=" {{url_for('send_image', filename=image_name)}}"><img  src=" {{url_for('send_image', filename=image_name)}}"></a>
 
                 {% endfor %}
             </div>

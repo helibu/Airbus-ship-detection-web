@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="shortcut icon" href="http://www.iconarchive.com/download/i91833/icons8/windows-8/Transport-Historic-Ship.ico">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Ship Detection</title>
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        * {
+	        box-sizing: border-box;
+	        margin: 0 0 0 0;
+	        padding: 0;
+        }
+
+        body {
+	        background-color:white;
+	        font-style: normal;
+	        font-weight: 300;
+	        font-size: 20px;
+            padding-bottom:0px;
+        }
+        /*top-header style*/
+        .top-header {
+	        align-items: center;
+	        background-color:#3949a3;
+	        box-shadow: 0px 2px 10px #333333;
+	        display: flex;
+	        height: 50px;
+	        position: fixed;
+	        top: 0;
+	        width: 100%;
+	        z-index: 1;
+            color:white;
+            font-weight: bold;
+            padding-top: 0px;
+        }
+        .top-nav {
+	        flex: 1;
+        }
+        .top-nav a {
+            color: white;
+            font:25px;
+	        font-weight: 400;
+            text-decoration:none;
+	        margin-left: 20px;
+        }
+        .top-nav a:hover {
+            text-decoration:underline;
+        }
+
+
+        /*main container style*/
+        #info {
+            margin: 60px auto;
+	        max-width: 1000px;
+	        min-width: 800px;
+
+
+
+        }
+
+
+
+        .bio {
+            overflow: hidden;
+            padding:50px;
+
+            margin:20px;
+            text-align:left;
+            padding-top:100px;
+            padding-bottom:100px;
+        }
+
+
+        #biograph a:hover {
+            background-color:#3949a3;
+            color: white;
+        }
+        #biograph a:active {
+            background-color:darkblue;
+            color: white;
+        }
+
+        html, input, textarea {
+            font: 100%/1.5em Helvetica, Arial, sans-serif;
+        }
+
+        #inputdiv {
+            overflow: hidden;
+            margin: 5% auto 0;
+            text-align: center;
+            width: 50%;
+            padding: 20px;
+
+        }
+                /*footer style*/
+        footer {
+	        font-size: 20px;
+	        height: 200px;
+	        position: relative;
+            top: -50px;
+            left: 0px;
+        }
+        footer p {
+	        text-align: center;
+        }
+        footer p.title {
+	        font-size: 25px;
+            font-style: italic;
+	        padding: 15px;
+        }
+        footer ul {
+            list-style: none;
+	        align-items: center;
+	        display: flex;
+	        padding: 15px;
+        }
+
+        footer ul li {
+            font-size:20px;
+	        flex: 1;
+
+        }
+
+        footer a:hover {
+
+            background-color:#3949a3;
+            color: white;
+        }
+        footer a:active {
+
+            background-color:darkblue;
+            color: white;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <header class="top-header">
+        <nav class="top-nav">
+            <a href="upload">Home</a>
+
+            <a href="gallery">Images</a>
+            <a href="samples">Samples</a>
+            <a href="contact" style="text-decoration:underline;">About</a>
+        </nav>
+    </header>
+    <div class="container">
+
+        <div id="info">
+            <div class="bio inputdiv" style="padding-bottom:100px;" >
+                <div class="bio" style="border:5px double #3949a3">
+
+                    <p id="biograph" >We are the Ship Detection Team. Welcome to our Website.
+                        I am He Li and my Teammate is Ruxin Diao.
+                        This web is an app for the Kaggle project: Airbus Ship Detection Challenge.
+                        This is the link to the Kaggle.
+                        <a href="https://www.kaggle.com/c/airbus-ship-detection" target="_blank">
+                            Airbus Ship Detection Challenge</a> <br><br> Here is the workflow of the whole model.<br>
+                        <div style="padding: 60px">
+                            <img src=" {{url_for('about_image', filename="webflow.jpg")}}" style="width: 600px;">
+                        </div>
+                        An ensemble model combining a ResNet50 model and a VGG16 is used to tell the ship existence.
+                        The accuracy is about 95%.<br>
+                        <div style="padding: 60px;padding-left: 100px">
+                            <img src=" {{url_for('about_image', filename="ensemble_model.jpg")}}" style="width: 500px;">
+                        </div>
+                        We use a U-net model with Inception V3 as backbone to locate ships on the images.<br>
+                        <div style="padding: 60px;padding-left: 130px">
+                            <img src=" {{url_for('about_image', filename="unet_model.jpg")}}" style="width: 400px;">
+                        </div>
+                        Web is built up from scratch with Flask. And the server is on AWS Elastic Beanstalk.<br>
+                    </p>
+
+
+                </div>
+
+
+            </div>
+            <hr style="border-top: 1px solid #ccc; background: transparent;">
+            <footer style="padding-top:20px;">
+                <div>
+                    <p class="title" id="contact" style="text-decoration: underline; font-size: 25px;"><br/><br/>Contact</p>
+                    <ul>
+
+                      <li>
+                          <p><i class="fa fa-envelope fa-lg"></i></p>
+                          <p><br /></p>
+                          <p><br /></p>
+                        <p style="font-size: 18px;">He Li: heli@bu.edu</p>
+                        <p style="font-size: 18px;">Ruxin Diao: ruxin@bu.edu</p>
+                      </li>
+                      <li>
+                          <p><i class="fa fa-github fa-2x"></i></p>
+                          <p><br /></p>
+                          <p style="font-size: 18px;"><a href="https://github.com/helibu/Airbus-ship-detection" target="_blank">Project</a></p>
+                          <p style="font-size: 18px;">He Li: <a href="https://github.com/helibu" target="_blank">helibu</a></p>
+                          <p style="font-size: 18px;">Ruxin Diao: <a href="https://github.com/ruxinbu" target="_blank">ruxinbu</a></p>
+
+                      </li>
+                    </ul>
+                </div>
+
+          </footer>
+
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
