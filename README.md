@@ -1,14 +1,8 @@
 # Airbus-ship-detection
-<<<<<<< HEAD
-Website: http://www.shipdetection.com/
-Sample images: https://drive.google.com/open?id=1rjQF9jnoygp29ucw-GE5W1EPSuTt8L-g
-=======
 Website: http://www.shipdetection.com/</br>
 Sample Images: https://drive.google.com/open?id=1rjQF9jnoygp29ucw-GE5W1EPSuTt8L-g
->>>>>>> c6ca37a37f19697d751403b8521d110a431ac488
 
 ## Background and Data Analysis
-
 This is a Kaggle challenge, here is the link. https://www.kaggle.com/c/airbusship-detection. The data size is about 30GB. The training data are masked
 with a separate csv file. We need to submit the same mask csv file for the test
 data. 
@@ -50,12 +44,14 @@ We use AWS elastic beanstalk service to run our web app, choosing python as the 
 ## Features
 ### Home Page for image upload
 This is the homepage of our website. We can upload a bunch of images in the same time, and see the image by click the "Images" button.
+<p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/upload.gif"></p>
 
 ### Images Page to display uploaded and predicated images
 In our image page, we can view our uploaded images with "has ship" or "no ship" on them, and if there is a ship on the image, the ship will be bordered by a red border-box. Also there is a "Clear images" button to clear the result.
-
+<p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/gallery.gif"></p>
 
 ### Sample page for sample images and sample download
+<p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/sample.gif"></p>
 
-### About page
-
+### About page 
+<p align="center"><img src="https://github.com/helibu/Airbus-ship-detection-web/blob/master/images/about.gif"></p>
