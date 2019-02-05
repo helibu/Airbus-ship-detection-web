@@ -1,5 +1,6 @@
 # Airbus-ship-detection
-http://www.shipdetection.com/
+Website: http://www.shipdetection.com/
+Sample images: https://drive.google.com/open?id=1rjQF9jnoygp29ucw-GE5W1EPSuTt8L-g
 
 ## Background and Data Analysis
 
